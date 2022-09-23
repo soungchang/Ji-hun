@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="Title">지훈 키우기</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <style>
+        .top {
+            font-weight: 900;
+          }
+        
+        * {margin: 100; padding: 0;}
+        .top {font-size: 1vw;}
+        .top {font-size: 5vh;}
+
+        .top {
+          font-weight: 900;
+        }
+      
+        .text {margin: 50; padding: 100;}
+        .top {font-size: 1vw;}
+        .top {font-size: 5vh;}
+
+        .text {
+        position: absolute;
+        top: 57%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+            }
+
+        .btn{
+            width: 23vh;
+            height: 7vh;
+            background-color: #004fff;
+            color: white;
+            box-shadow: 0 04px 16 px rgba(0, 79, 255, 0.3);
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 20px;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          .btn:focus{
+            outline: 0;
+          }
+          
+          .btn:hover{
+            background-color: rgba(0, 79, 255, 0.6);
+            cursor: pointer;
+            box-shadow: 0 2px 4px;
+          }
+          .settingBtn{
+            width: 12vh;
+            height: 4vh;
+            background-color: #9c9c9c;
+            color: black;
+            box-shadow: 0 04px 16 px rgba(0, 79, 255, 0.3);
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 20px;
+            position: absolute;
+            top: 18%;
+            left:88%;
+            transform: translate(-50%, -50%);
+          }
+          .settingBtn:focus{
+            outline: 0;
+          }
+          
+          .settingBtn:hover{
+            background-color: rgba(202, 202, 202, 0.6);
+            cursor: pointer;
+            box-shadow: 0 2px 4px;
+          }
+
+          .back{
+            width: 12vh;
+            height: 4vh;
+            background-color: #9c9c9c;
+            color: black;
+            box-shadow: 0 04px 16 px rgba(0, 79, 255, 0.3);
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 20px;
+            position: absolute;
+            top: 5%;
+            left:50%;
+            transform: translate(-50%, -50%);
+          }
+          .back:focus{
+            outline: 0;
+          }
+          
+          .back:hover{
+            background-color: rgba(202, 202, 202, 0.6);
+            cursor: pointer;
+            box-shadow: 0 2px 4px;
+          }
+          .difficult1 {
+            box-sizing: border-box;
+            width: 10vh;
+            height: 5vh;
+            margin: 20px auto;
+            background-color: orange;
+            border-radius: 15px 15px 15px 15px;
+            position: absolute;
+            left:50%;
+            transform: translate(-50%, -50%);
+          }
+          .difficult2 {
+            box-sizing: border-box;
+            width: 10vh;
+            height: 5vh;
+            margin: 20px auto;
+            background-color: orange;
+            border-radius: 15px 15px 15px 15px;
+            position: absolute;
+            left:50%;
+            transform: translate(-50%, -50%);
+          }
+          .difficult3 {
+            box-sizing: border-box;
+            width: 10vh;
+            height: 5vh;
+            margin: 20px auto;
+            background-color: orange;
+            border-radius: 15px 15px 15px 15px;
+            position: absolute;
+            left:50%;
+            transform: translate(-50%, -50%);
+          }
+          .difficult4 {
+            box-sizing: border-box;
+            width: 10vh;
+            height: 5vh;
+            margin: 20px auto;
+            background-color: orange;
+            border-radius: 15px 15px 15px 15px;
+            position: absolute;
+            left:50%;
+            transform: translate(-50%, -50%);
+          }
+          .difficult5 {
+            box-sizing: border-box;
+            width: 10vh;
+            height: 5vh;
+            margin: 20px auto;
+            background-color: orange;
+            border-radius: 15px 15px 15px 15px;
+            position: absolute;
+            left:50%;
+            transform: translate(-50%, -50%);
+          }
+    </style>
+</head>
+<body>
+    <h1 class="top" id="top">더러운 지훈</h1><hr/>
+    <h1 class="text" id="text">0/10</h1>
+    <a id="level" class=level>level 1</a>
+    <button id="btn" class="btn" type="menu" onclick="CountPlus()">버튼</button>
+    <button class="settingBtn" id="settingBtn" onclick="setting()">설정</button>
+    <button class="back" id="back" onclick="Back()">돌아가기</button><br><br><br><br><br><br><br>
+    <button class="difficult1" id="difficult1" onclick="하()">하</button><br><br>
+    <button class="difficult2" id="difficult2" onclick="중()">중</button><br><br>
+    <button class="difficult3" id="difficult3" onclick="상()">상</button><br><br>
+    <button class="difficult4" id="difficult4" onclick="최상()">최상</button><br><br>
+    <button class="difficult5" id="difficult5" onclick="헬()">HELL</button><br><br>
+        <script>
+        document.getElementById("back").style.display = "none";
+        document.getElementById("difficult1").style.display = "none";
+        document.getElementById("difficult2").style.display = "none";
+        document.getElementById("difficult3").style.display = "none";
+        document.getElementById("difficult4").style.display = "none";
+        document.getElementById("difficult5").style.display = "none";
+
+        let count = 0;
+        let count2 = 10;
+        let count3 = 0;
+        let text1 = "none";
+        let level = 1;
+        let level2 = "level ";
+        let levelText = "level";
+        let 배수 = 2;
+        Center("top")
+        function Center(id) {
+            document.getElementById(id).style.textAlign = "center";
+        }
+        function CountPlus() {
+            console.log("버튼 눌림", count)
+            count3 = "/" + count2;
+            count = count + 1;
+            text1 = count + count3;
+            document.getElementById("text").innerHTML = text1;
+            if(count >= count2){
+                count2 = count2 * 배수;
+                level = level + 1;
+                levelText = level2 + level;
+                count = 0;
+                document.getElementById("level").innerHTML = levelText;
+                if (level == 1){
+                  document.getElementById("top").innerHTML = "더러운 지훈";
+                }
+                if (level == 2){
+                  document.getElementById("top").innerHTML = "못생긴 지훈";
+                }
+                if (level == 3){
+                  document.getElementById("top").innerHTML = "평범한 지훈";
+                }
+                if (level == 4){
+                  document.getElementById("top").innerHTML = "착한 지훈";
+                }
+                if (level == 5){
+                  document.getElementById("top").innerHTML = "똑똑한 지훈";
+                }
+                if (level == 6){
+                  document.getElementById("top").innerHTML = "멋진 지훈";
+                }
+                if (level == 7){
+                  document.getElementById("top").innerHTML = "잘생긴 지훈";
+                }
+                if (level == 8){
+                  document.getElementById("top").innerHTML = "귀여운 지훈";
+                }
+                if (level == 9){
+                  document.getElementById("top").innerHTML = "착하고 똑똑한 지훈 ";
+                }
+                if (level == 10){
+                  document.getElementById("top").innerHTML = "착하고 똑똑하고 멋진 지훈 ";
+                }
+                if (level == 11){
+                  document.getElementById("top").innerHTML = "착하고 똑똑하고 멋지고 잘생긴 지훈";
+                }
+                if (level == 12){
+                  document.getElementById("top").innerHTML = "착하고 똑똑하고 멋지고 잘생기고 귀여운 지훈";
+                }
+
+            }
+          }
+        function setting() {
+          document.getElementById("top").style.display = "none";
+          document.getElementById("text").style.display = "none";
+          document.getElementById("level").style.display = "none";
+          document.getElementById("btn").style.display = "none";
+          document.getElementById("settingBtn").style.display = "none";
+          document.getElementById("back").style.display = "block";
+          document.getElementById("difficult1").style.display = "block";
+        document.getElementById("difficult2").style.display = "block";
+        document.getElementById("difficult3").style.display = "block";
+        document.getElementById("difficult4").style.display = "block";
+        document.getElementById("difficult5").style.display = "block";
+        }
+        function Back() {
+          document.getElementById("difficult1").style.display = "none";
+          document.getElementById("difficult2").style.display = "none";
+          document.getElementById("difficult3").style.display = "none";
+          document.getElementById("difficult4").style.display = "none";
+          document.getElementById("difficult5").style.display = "none";
+          document.getElementById("top").style.display = "block";
+          document.getElementById("text").style.display = "block";
+          document.getElementById("level").style.display = "block";
+          document.getElementById("btn").style.display = "block";
+          document.getElementById("settingBtn").style.display = "block";
+          document.getElementById("back").style.display = "none";
+        }
+        function 하(){
+          배수 = 1.5;
+          console.log("하 버튼 눌림")
+        }
+        function 중(){
+          배수 = 3;
+          console.log("중 버튼 눌림")
+        }
+        function 상(){
+          배수 = 4;
+          console.log("상 버튼 눌림")
+        }
+        function 최상(){
+          배수 = 5;
+          console.log("최상 버튼 눌림")
+        }
+        function 헬(){
+          배수 = 10;
+          console.log("헬 버튼 눌림")
+        }
+        
+    </script>
+</body>
+</html>
